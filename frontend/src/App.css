@@ -1,0 +1,33 @@
+@layer base {
+    body {
+        background-color: #FAF9F4;
+        font-family: 'Poppins', sans-serif;
+    }
+} 
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-marquee {
+    display: inline-flex;
+    animation: marquee 20s linear infinite;
+}
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #f8892f;
+    --color-secondary: #008f3e;
+    --color-tertiary: #f1eee4;
+}
+
+/* @layer components {
+    .inscription-input {
+        @apply border border-primary/50 p-2.5 rounded-md lg:w-2/5;
+    }
+} */
