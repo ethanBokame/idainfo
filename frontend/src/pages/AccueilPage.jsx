@@ -10,6 +10,8 @@ import {
 import Chaud from "../components/Chaud";
 import Froid from "../components/Froid";
 import Rechauffe from "../components/Rechauffe";
+import HeureActuelle from "../components/HeureActuelle";
+import MeteoActuelle from "../components/MeteoActuelle";
 
 function AccueilPage() {
     return (
@@ -18,12 +20,12 @@ function AccueilPage() {
                 <div className="flex flex-col gap-4 mt-5">
                     <div className="flex items-center gap-2 text-lg bg-tertiary font-semibold px-4 py-2 rounded-lg self-baseline">
                         <Clock className="text-primary" />
-                        12:45:50
+                        <HeureActuelle />
                     </div>
                     <div className="flex items-center gap-2 bg-tertiary px-4 py-2 rounded-lg">
                         <MapPin className="text-primary" />
                         <span className="font-semibold">Abidjan</span>{" "}
-                        <span className="text-sm">28°C • Ensoleillé</span>
+                        <MeteoActuelle />
                     </div>
                 </div>
                 <img src="/logo.jpeg" className="h-32 w-auto" />
@@ -102,9 +104,9 @@ function AccueilPage() {
                         Découvrez l'actualité par température
                     </p>
                     <div className="flex flex-col gap-6">
-                    <Chaud />
-                    <Froid />
-                    <Rechauffe />
+                        <Chaud />
+                        <Froid />
+                        <Rechauffe />
                     </div>
 
                     <div></div>
