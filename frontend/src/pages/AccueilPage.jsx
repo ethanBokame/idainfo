@@ -7,6 +7,7 @@ import HeureActuelle from "../components/HeureActuelle";
 import MeteoActuelle from "../components/MeteoActuelle";
 import ScrollToTop from "../components/ScrollToTop";
 import Navbar from "../components/navbar";
+import Footer from "../components/Footer";
 
 function AccueilPage() {
     return (
@@ -99,6 +100,7 @@ function AccueilPage() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }
