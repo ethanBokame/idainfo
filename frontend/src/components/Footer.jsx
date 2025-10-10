@@ -51,10 +51,10 @@ function Footer() {
 
                     {/* Colonne Application */}
                     <div className="space-y-4">
-                        <h3 className="text-primary font-bold text-lg">Application</h3>
+                        {/* <h3 className="text-primary font-bold text-lg">Application</h3> */}
                         <div className="space-y-4">
                             {/* Bouton de téléchargement */}
-                            <button className="bg-primary hover:bg-primary/80 text-white rounded-lg px-4 py-3 w-full transition-colors">
+                            {/* <button className="bg-primary hover:bg-primary/80 text-white rounded-lg px-4 py-3 w-full transition-colors">
                                 <div className="flex items-center gap-3">
                                     <Download strokeWidth={2.5} size={20} />
                                     <div className="text-left">
@@ -62,7 +62,7 @@ function Footer() {
                                         <div className="text-xs">App mobile</div>
                                     </div>
                                 </div>
-                            </button>
+                            </button> */}
 
                             {/* Section Communauté active */}
                             <div className="bg-gray-800 rounded-lg px-4 py-3">

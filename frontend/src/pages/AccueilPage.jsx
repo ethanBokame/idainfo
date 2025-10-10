@@ -1,15 +1,31 @@
 import { Link } from "react-router-dom";
 import { Clock, MapPin, Users } from "lucide-react";
+import { useState } from "react";
 import Chaud from "../components/Chaud";
 import Froid from "../components/Froid";
 import Rechauffe from "../components/Rechauffe";
 import HeureActuelle from "../components/HeureActuelle";
 import MeteoActuelle from "../components/MeteoActuelle";
 import ScrollToTop from "../components/ScrollToTop";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
+import RadioPlayer from "../components/RadioPlayer";
 
 function AccueilPage() {
+    const [currentRadio, setCurrentRadio] = useState(null);
+    const [isRadioPlayerVisible, setIsRadioPlayerVisible] = useState(false);
+
+    const handleRadioSelect = (radio) => {
+        setCurrentRadio(radio);
+        setIsRadioPlayerVisible(true);
+    };
+
+    const handleCloseRadioPlayer = () => {
+        setIsRadioPlayerVisible(false);
+        setCurrentRadio(null);
+    };
+
     return (
         <div>
             <Navbar />
@@ -80,27 +96,16 @@ function AccueilPage() {
                     <div></div>
                 </div>
 
-                <div className="w-1/4 rounded-lg overflow-hidden text-center shadow-md">
-                    <div className="relative flex items-center justify-center gap-3 text-lg font-bold bg-primary text-white px-4 py-4">
-                        <img src="/rire_2.png" className="w-7 h-7" />
-                        <p className="z-10">La pensée de l'humoriste</p>
-                        <img
-                            src="/rire_emoji.png"
-                            className="absolute right-[-30px] w-18 opacity-50"
-                        />
-                    </div>
-                    <div className="flex flex-col gap-4 px-4 py-8 bg-white">
-                        <p className="text-lg">
-                            « Ce n’est pas une passe mais un penalty que Gbagbo
-                            a donné à Alassane. »
-                        </p>
-                        <i className="text-primary/85 hover:underline hover:cursor-pointer">
-                            Adama Dahico
-                        </i>
-                    </div>
-                </div>
+                <Sidebar onRadioSelect={handleRadioSelect} />
             </div>
             <Footer />
+            
+            {/* Lecteur radio */}
+            <RadioPlayer 
+                radio={currentRadio}
+                isVisible={isRadioPlayerVisible}
+                onClose={handleCloseRadioPlayer}
+            />
         </div>
     );
 }
