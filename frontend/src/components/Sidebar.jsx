@@ -28,7 +28,7 @@ function Sidebar({ onRadioSelect }) {
     };
 
     return (
-        <div className="w-1/4 flex flex-col gap-6">
+        <div className="w-1/4 hidden lg:flex flex-col gap-6">
             {/* Section Pensée de l'humoriste */}
             <div className="rounded-lg overflow-hidden text-center shadow-lg">
                 <div className="relative flex items-center justify-center gap-3 text-lg font-bold bg-primary text-white px-4 py-4">

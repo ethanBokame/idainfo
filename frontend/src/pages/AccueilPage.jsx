@@ -11,6 +11,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import RadioPlayer from "../components/RadioPlayer";
+import TopPublicity from "../components/TopPublicity";
 
 function AccueilPage() {
     const [currentRadio, setCurrentRadio] = useState(null);
@@ -70,34 +71,19 @@ function AccueilPage() {
         <div>
             <Navbar />
             <ScrollToTop />
-            <div className="bg-[#ab4c1d]/90 shadow-sm py-0.5"></div>
-            <div className="bg-primary pb-2 pt-1.5 overflow-hidden relative">
-                <div className="whitespace-nowrap animate-marquee flex gap-6 text-white">
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                    <p>Publicité</p>
-                </div>
-            </div>
+            <TopPublicity />
+
             <div className="flex items-center bg-tertiary overflow-x-auto lg:overflow-visible">
                 {/* Zone icônes à gauche */}
                 <div className="flex items-center lg:pl-4 mr-4 shrink-0">
-                    <img
-                        src="/home.png"
-                        className="h-12.5 w-12.5 p-3.5 lg:h-5 lg:w-5 border-r-1 border-primary/30 lg:border-none cursor-pointer hover:text-primary duration-125"
-                    />
+                    <div className="relative">
+                        <img
+                            src="/home.png"
+                            className="h-12.5 w-12.5 p-3.5 lg:h-5 lg:w-5 border-r-1 border-primary/30 lg:border-none cursor-pointer hover:text-primary duration-125"
+                        />
+                        <div className="lg:hidden h-1 w-full bg-secondary absolute top-0"></div>
+                    </div>
+
                     <img
                         src="/video.png"
                         className="h-12.5 w-12.5 p-3.5 lg:h-5 lg:w-5 border-r-1 border-primary/30 lg:border-none cursor-pointer hover:text-primary duration-125"
@@ -137,23 +123,27 @@ function AccueilPage() {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-2 py-8 bg-tertiary my-12 w-[80%] mx-auto">
+            <div className="flex flex-col items-center justify-center gap-2 py-8 bg-tertiary mt-2 mb-6 w-full lg:my-12 lg:w-[80%] mx-auto">
                 <img src="/logo_1.jpg" className="h-14 rounded-full" />
             </div>
 
-            <div className="px-10 flex justify-between gap-6 items-baseline">
+
+            <div className="px-4 lg:px-10 flex justify-between gap-6 items-baseline">
                 <div className="flex-1">
-                    <p className="text-2xl font-bold mb-5">
+                    <p className="hidden lg:block text-2xl font-bold mb-5">
                         Découvrez l'actualité par température
                     </p>
-                    <div className="flex flex-col gap-6">
+                    <p className="lg:hidden text-2xl font-bold mb-5">
+                        De l'actualité la plus chaude à la plus froide
+                    </p>
+                    <div className="flex flex-col gap-6 mb-12 lg:mb-0">
                         <Chaud />
                         <Froid />
                         <Rechauffe />
                     </div>
 
                     {/* Section Vidéos Populaires */}
-                    <div className="py-16 px-10">
+                    <div className="py-16 px-10 hidden lg:block">
                         <div className="max-w-7xl mx-auto">
                             <div className="text-center mb-12">
                                 <h2 className="text-4xl font-bold text-gray-800 mb-4">
